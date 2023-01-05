@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""Defines a function that determines if a box containing a list
-   of lists can be opened using keys stored in the lists
-"""
+"""Script will unlock list of lists"""
+
 
 def canUnlockAll(boxes):
     """This function will take a list of lists and the content
