@@ -4,12 +4,6 @@ Minimum Operations Task
 """
 
 def minOperations(n):
-    """
-    Function to calculate fewest number of operations needed
-    to result in exactly n H characters in the file.
-    Returns:
-        Integer: if n is impossible to achieve, return 0
-    """
     pasted_chars = 1 #No of characters in the file
     clipboard = 0 #No of Hs coped
     counter = 0 #Operations Counter
