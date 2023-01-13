@@ -4,7 +4,7 @@ Minimum Operations Task
 """
 
 def minOperations(n):
-        """
+    """
     In a text file, there is a single character H. Your text editor can execute
     only two operations in this file: Copy All and Paste. Given a number n,
     write a method that calculates the fewest number of operations needed to
@@ -12,15 +12,11 @@ def minOperations(n):
     Returns an integer
     If n is impossible to achieve, returns 0
     """
-    if not isinstance(n, int):
-        return 0
-
     operations = 0
-    i = 2
-    while (i <= n):
-        if not (n % i):
-            n = int(n / i)
-            operations += i
-            i = 1
-        i += 1
+    min_operations = 2
+    while n > 1:
+        while n % min_operations == 0:
+            operations += min_operations
+            n /= min_operations
+        min_operations += 1
     return operations
