@@ -4,33 +4,23 @@ Minimum Operations Task
 """
 
 def minOperations(n):
-    pasted_chars = 1 #No of characters in the file
-    clipboard = 0 #No of Hs coped
-    counter = 0 #Operations Counter
-
-    while pasted_chars < n:
-        if clipboard == 0:
-            clipboard = pasted_chars
-            counter += 1
-
-        if pasted_chars == 1:
-            pasted_chars += clipboard
-            counter += 1
-            continue
-        
-        remaining = n - pasted_chars
-        if remaining < clipboard:
-            return 0
-
-        if remaining % pasted_chars != 0:
-            pasted_chars += clipboard
-            counter += 1
-        else:
-            clipboard = pasted_chars
-            pasted_chars += clipboard
-            counter += 2
-
-    if pasted_chars == n:
-        return counter
-    else:
+        """
+    In a text file, there is a single character H. Your text editor can execute
+    only two operations in this file: Copy All and Paste. Given a number n,
+    write a method that calculates the fewest number of operations needed to
+    result in exactly n H characters in the file.
+    Returns an integer
+    If n is impossible to achieve, returns 0
+    """
+    if not isinstance(n, int):
         return 0
+
+    operations = 0
+    i = 2
+    while (i <= n):
+        if not (n % i):
+            n = int(n / i)
+            operations += i
+            i = 1
+        i += 1
+    return operations
