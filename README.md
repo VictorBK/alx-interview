@@ -1,1 +1,1 @@
-ALX technical interview preparation.
+Repository containing ALX Interview preparation questions.
